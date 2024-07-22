@@ -1,0 +1,10 @@
+server:
+  port: 80
+spring:
+  application:
+    name: lbh-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost
+        port: 8848

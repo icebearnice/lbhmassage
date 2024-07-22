@@ -1,0 +1,50 @@
+server:
+  port: 8101
+
+spring:
+  application:
+    name: lbh-user
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 # Nacos 服务发现地址
+        port: 8848 # Nacos 服务注册的端口（如果与服务发现端口不同，可以单独指定）
+
+  # 数据库配置
+  datasource:
+    type: com.mysql.cj.jdbc.MysqlDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://103.100.210.187/massage?useSSL=false&serverTimezone=UTC
+    username: rw_user
+    password: NewPass!123
+
+  # MyBatis 配置
+# MyBatis-Plus 配置
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/*.xml
+  type-aliases-package: com.lbh.user.domain
+  configuration:
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl # 使用 SLF4J 作为日志实现
+  global-config:
+    db-config:
+      id-type: auto # 主键自增
+      logic-delete-value: 1 # 逻辑删除的值
+      logic-not-delete-value: 0 # 非逻辑删除的值
+
+
+
+  # Redis 配置
+  redis:
+    host: 103.100.210.187
+    port: 6379
+    password: NewPass!123 # 如果你的 Redis 需要密码，填写密码
+    timeout: 5000 # 连接超时时间（毫秒）
+    jedis:
+      pool:
+        max-active: 10 # 连接池最大连接数
+        max-idle: 5 # 连接池最大空闲连接数
+        min-idle: 1 # 连接池最小空闲连接数
+        max-wait: 1000ms # 连接池最大等待时间
+
+
