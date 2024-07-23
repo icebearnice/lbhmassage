@@ -18,7 +18,7 @@ import javax.annotation.Resource;
 public class HelloController {
     @RequestMapping("/test")
     public String test(String username, String password) {
-        log.info("u==:{},p=={}", username, password);
+        log.info("uu==:{},p=={}", username, password);
 
         return "username==" + username + "hello";
     }
