@@ -1,0 +1,20 @@
+server:
+  port: 80
+spring:
+  application:
+    name: lbh-gateway
+  cloud:
+    nacos:
+      discovery:
+
+        server-addr: localhost:8848
+    gateway:
+      routes:
+        - id: lbh-user
+          uri: lb://lbh-user
+          predicates:
+            - Path=/user/**
+          filters:
+            - StripPrefix=1
+
+

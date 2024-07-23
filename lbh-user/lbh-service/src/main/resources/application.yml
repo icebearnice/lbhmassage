@@ -6,6 +6,11 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848 #配置nacos的地址 就是ip+ 端口
+    loadbalancer:
+      retry:
+        enabled: true
+
+
   application:
     name: lbh-user
   # 数据库配置
@@ -39,6 +44,8 @@ spring:
         max-idle: 5 # 连接池最大空闲连接数
         min-idle: 1 # 连接池最小空闲连接数
         max-wait: 1000ms # 连接池最大等待时间
+#       boot2x整合swagger的时候需要的配置
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
+
