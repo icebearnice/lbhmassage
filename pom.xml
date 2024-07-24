@@ -11,6 +11,7 @@
         <module>lbh-common</module>
         <module>lbh-gateway</module>
         <module>lbh-user</module>
+        <module>lbh-generator</module>
 
     </modules>
     <packaging>pom</packaging>

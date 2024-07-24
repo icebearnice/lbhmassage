@@ -16,16 +16,17 @@ spring:
   # 数据库配置
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://103.100.210.187:3306/massage?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://103.100.210.187:3306/massage_user?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     username: rw_user
-    password: NewPass!321
+    password: NewPass!123
 
   # MyBatis 配置
   mybatis-plus:
+
     mapper-locations: classpath*:/mapper/*.xml
     type-aliases-package: com.lbh.user.domain
     configuration:
-      log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl # 使用 SLF4J 作为日志实现
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #mysql语言日志输出 方便观察
     global-config:
       db-config:
         id-type: auto # 主键自增

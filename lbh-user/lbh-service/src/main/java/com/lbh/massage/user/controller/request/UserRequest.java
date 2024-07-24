@@ -1,4 +1,4 @@
-package com.lbh.user.request;
+package com.lbh.massage.user.controller.request;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
